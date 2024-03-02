@@ -7,9 +7,12 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import POM.ABTestingPOM;
@@ -23,6 +26,17 @@ public class ABTesting extends SetupTeardown {
 	ABTestingPOM abTestingPOM;
 	Functions func = new Functions();
 	String folderName = "ABTesting";
+	private static String className = "ABTesting";
+	
+	static ExtentTest test;
+	static ExtentReports report;
+	@BeforeClass
+	public static void startTest()
+	{
+	report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
+	test = report.startTest("ABTesting");
+	}
+	
 	SetupTeardown setupTearDown;
 	@Test(priority = 0)
 	public void abTesting(){
