@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 public class Functions {
 
 	
-	public static void takeScreenShot(WebDriver driver, String folderName, String fileName) throws IOException {
+	public void takeScreenShot(WebDriver driver, String folderName, String fileName) throws IOException {
 		
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");

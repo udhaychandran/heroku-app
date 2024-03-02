@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-02T14:02:07 IST" name="Default suite" finished-at="2024-03-02T14:02:20 IST" duration-ms="12277">
+  <suite started-at="2024-03-02T16:56:21 IST" name="Default suite" finished-at="2024-03-02T16:56:47 IST" duration-ms="26239">
     <groups>
     </groups>
-    <test started-at="2024-03-02T14:02:07 IST" name="Default test" finished-at="2024-03-02T14:02:20 IST" duration-ms="12277">
-      <class name="helper.ChallengingDOM">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.ChallengingDOM@27406a17]" started-at="2024-03-02T14:02:07 IST" name="setUp" finished-at="2024-03-02T14:02:13 IST" duration-ms="5676" status="PASS">
+    <test started-at="2024-03-02T16:56:21 IST" name="Default test" finished-at="2024-03-02T16:56:47 IST" duration-ms="26239">
+      <class name="helper.ContextMenu">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.ContextMenu@15bb5034]" started-at="2024-03-02T16:56:21 IST" name="setUp" finished-at="2024-03-02T16:56:36 IST" duration-ms="14721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="challengingDOM()[pri:0, instance:helper.ChallengingDOM@27406a17]" started-at="2024-03-02T14:02:13 IST" name="challengingDOM" finished-at="2024-03-02T14:02:19 IST" duration-ms="6405" status="PASS">
+        <test-method signature="contextMenuTest()[pri:0, instance:helper.ContextMenu@15bb5034]" started-at="2024-03-02T16:56:36 IST" name="contextMenuTest" finished-at="2024-03-02T16:56:47 IST" duration-ms="11332" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- challengingDOM -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.ChallengingDOM@27406a17]" started-at="2024-03-02T14:02:19 IST" name="tearDown" finished-at="2024-03-02T14:02:20 IST" duration-ms="166" status="PASS">
+        </test-method> <!-- contextMenuTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.ContextMenu@15bb5034]" started-at="2024-03-02T16:56:47 IST" name="tearDown" finished-at="2024-03-02T16:56:47 IST" duration-ms="155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- helper.ChallengingDOM -->
+      </class> <!-- helper.ContextMenu -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: heroku_app.heroku_app.AppTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in heroku_app.heroku_app.AppTest
