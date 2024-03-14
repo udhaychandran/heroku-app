@@ -19,27 +19,39 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SetupTeardown {
+public class SetupTeardownCrossBrowser {
 	
 	public static ExtentReports extentReport;
 	public static ExtentTest extentTest;
 	public static String className;
 	public static WebDriver driver;
 	public WebDriverWait wait;
-	public SetupTeardown() {
+	public SetupTeardownCrossBrowser() {
 		this.driver=driver;
 	}
 	
 	
 	@BeforeTest
-	public void setUp() {
+	@Parameters("browser")
+	public void setUp(String browser) {
 				
-			WebDriverManager.chromedriver().clearDriverCache().setup();
+			if (browser.equalsIgnoreCase("chrome"))
+			{
+				WebDriverManager.chromedriver().clearDriverCache().setup();
 				driver = new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 				driver.manage().window().maximize(); 	
 				driver.get("https://the-internet.herokuapp.com/");
-					
+			}
+			if (browser.equalsIgnoreCase("firefox"))
+			{
+				WebDriverManager.chromedriver().clearDriverCache().setup();
+				driver = new FirefoxDriver();
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+				driver.manage().window().maximize(); 	
+				driver.get("https://the-internet.herokuapp.com/");
+			}
+			
 		}
 		
 	
