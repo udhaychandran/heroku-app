@@ -3,6 +3,7 @@ package helper;
 import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -15,17 +16,20 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import POM.BrokenImagePOM;
-
+import utilities.Functions;
 import utilities.SetupTeardown;
 
 public class BrokenImage extends SetupTeardown {
 	
 	BrokenImagePOM brokenImagePOM;
 	private int invalidImgCount =0;
+	String fileName = "./src/test/java/resources/basicInfo.properties";
+	Properties prop = Functions.readProperties(fileName);
 	
 	@Test(priority =0)
 	public void findBrokenImages() throws InterruptedException, ClientProtocolException, IOException {
 		
+		driver.get(prop.getProperty("url"));
 		brokenImagePOM = new BrokenImagePOM(driver);
 		brokenImagePOM.brokenImageLink();
 		Thread.sleep(3000);

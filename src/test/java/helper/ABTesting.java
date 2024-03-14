@@ -2,6 +2,7 @@ package helper;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -24,19 +25,11 @@ public class ABTesting extends SetupTeardown {
 
 	//WebDriver driver;
 	ABTestingPOM abTestingPOM;
+	String fileName = "./src/test/java/resources/basicInfo.properties";
 	Functions func = new Functions();
+	Properties prop = Functions.readProperties(fileName);
 	String folderName = "ABTesting";
-	private static String className = "ABTesting";
-	
-	static ExtentTest test;
-	static ExtentReports report;
-	@BeforeClass
-	public static void startTest()
-	{
-	report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
-	test = report.startTest("ABTesting");
-	}
-	
+	private static String className = "ABTesting";	
 	SetupTeardown setupTearDown;
 	@Test(priority = 0)
 	public void abTesting(){
@@ -46,10 +39,10 @@ public class ABTesting extends SetupTeardown {
 			abTestingPOM.abTesting();
 			Thread.sleep(2000);
 			func.takeScreenShot(driver, folderName, "ABTestingPage");
-			extentTest.log(LogStatus.PASS, "ABTesting Link is clicked");
+			
 		}
 		catch (Exception e) {
-			extentTest.log(LogStatus.FAIL, "ABTesting Link is has some issues");
+			
 		}
 		
 		
@@ -61,7 +54,7 @@ public class ABTesting extends SetupTeardown {
 			abTestingPOM = new ABTestingPOM(driver);
 			abTestingPOM.elementSeleniumLink();
 			func.takeScreenShot(driver, folderName, "Elemental_Selenium");
-			extentTest.log(LogStatus.PASS, "Switched to Elemental selenium link");
+			
 			String parentWindow = driver.getWindowHandle();
 			Set<String> childWindow = driver.getWindowHandles();
 			for (String handle: childWindow)
@@ -80,7 +73,7 @@ public class ABTesting extends SetupTeardown {
 		}
 		catch (Exception e)
 		{
-			extentTest.log(LogStatus.FAIL, "Failed to switch to Elemental selenium link");
+			
 		}
 		
 	
