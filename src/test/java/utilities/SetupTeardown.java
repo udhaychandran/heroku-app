@@ -12,16 +12,16 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.beust.jcommander.Parameter;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SetupTeardown {
 	
-	public static ExtentReports extentReport;
+	public static ExtentReports extentReports;
 	public static ExtentTest extentTest;
 	public static String className;
 	public static WebDriver driver;
@@ -30,15 +30,15 @@ public class SetupTeardown {
 		this.driver=driver;
 	}
 	
-	
 	@BeforeTest
 	public void setUp() {
-				
-			WebDriverManager.chromedriver().clearDriverCache().setup();
-				driver = new ChromeDriver();
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-				driver.manage().window().maximize(); 	
-				//driver.get("https://the-internet.herokuapp.com/");
+		
+		extentReports = ExtentReport.getInstance("Test App");
+		WebDriverManager.chromedriver().clearDriverCache().setup();
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().window().maximize(); 	
+		driver.get("https://the-internet.herokuapp.com/");
 					
 		}
 		
@@ -46,7 +46,7 @@ public class SetupTeardown {
  	@AfterTest
  	public void tearDown() {
  		driver.quit();
- 		System.out.println("After test executed");
+ 		extentReports.flush();
  	}
 	
 	public void waitForSometime() {

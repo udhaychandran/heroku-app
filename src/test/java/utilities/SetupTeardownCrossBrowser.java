@@ -13,16 +13,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.beust.jcommander.Parameter;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SetupTeardownCrossBrowser {
 	
-	public static ExtentReports extentReport;
-	public static ExtentTest extentTest;
+
 	public static String className;
 	public static WebDriver driver;
 	public WebDriverWait wait;
