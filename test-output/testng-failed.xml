@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="helper.Frame">
+      <class name="helper.BrokenImage">
         <methods>
+          <include name="findBrokenImages"/>
           <include name="setUp"/>
-          <include name="frameOperation"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- helper.Frame -->
+      </class> <!-- helper.BrokenImage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
