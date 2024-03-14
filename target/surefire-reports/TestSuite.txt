@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 57.993 s <<< FAILURE! - in TestSuite
+abTesting(helper.ABTesting)  Time elapsed: 3.504 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.relevantcodes.extentreports.ExtentTest.log(com.relevantcodes.extentreports.LogStatus, String)" because "helper.ABTesting.extentTest" is null
+	at helper.ABTesting.abTesting(ABTesting.java:52)
+
+switchToElementalSelenium(helper.ABTesting)  Time elapsed: 0.248 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.relevantcodes.extentreports.ExtentTest.log(com.relevantcodes.extentreports.LogStatus, String)" because "helper.ABTesting.extentTest" is null
+	at helper.ABTesting.switchToElementalSelenium(ABTesting.java:83)
+
+addElement(helper.AddElement)  Time elapsed: 7.066 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"link text","selector":"Add/Remove Elements"}
+  (Session info: chrome=121.0.6167.185)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7a01ea6c021765ca72f1a97927998337, findElement {using=link text, value=Add/Remove Elements}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59771}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59771/devtoo..., se:cdpVersion: 121.0.6167.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7a01ea6c021765ca72f1a97927998337
+	at helper.AddElement.addElement(AddElement.java:21)
+
+deleteElement(helper.AddElement)  Time elapsed: 5.035 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Delete']"}
+  (Session info: chrome=121.0.6167.185)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7a01ea6c021765ca72f1a97927998337, findElement {using=xpath, value=//button[text()='Delete']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59771}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59771/devtoo..., se:cdpVersion: 121.0.6167.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7a01ea6c021765ca72f1a97927998337
+	at helper.AddElement.deleteElement(AddElement.java:30)
+
+findBrokenImages(helper.BrokenImage)  Time elapsed: 5.073 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"link text","selector":"Broken Images"}
+  (Session info: chrome=121.0.6167.185)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7a01ea6c021765ca72f1a97927998337, findElement {using=link text, value=Broken Images}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59771}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59771/devtoo..., se:cdpVersion: 121.0.6167.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7a01ea6c021765ca72f1a97927998337
+	at helper.BrokenImage.findBrokenImages(BrokenImage.java:30)
+
