@@ -1,6 +1,8 @@
 package utilities;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,27 +28,37 @@ public class SetupTeardown {
 	public static String className;
 	public static WebDriver driver;
 	public WebDriverWait wait;
-	public SetupTeardown() {
-		this.driver=driver;
-	}
 	
-	@BeforeTest
-	public void setUp() {
+	
+	public SetupTeardown() {
 		
-		extentReports = ExtentReport.getInstance("Test App");
-		WebDriverManager.chromedriver().clearDriverCache().setup();
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().window().maximize(); 	
-		driver.get("https://the-internet.herokuapp.com/");
-					
+	}	
+	@BeforeTest
+	public static WebDriver setUp() {
+		Date date = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		if (driver==null)
+		{
+			extentReports = ExtentReport.getInstance("Report/Reports_"+dateFormat.format(date));
+			WebDriverManager.chromedriver().clearDriverCache().setup();
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize(); 	
+			driver.get("https://the-internet.herokuapp.com/");
+						
+		}
+		return driver;
+		
 		}
 		
 	
  	@AfterTest
  	public void tearDown() {
- 		driver.quit();
- 		extentReports.flush();
+ 		if (driver!=null)
+ 		{
+ 			driver.quit();
+ 	 		extentReports.flush();	
+ 		}
  	}
 	
 	public void waitForSometime() {

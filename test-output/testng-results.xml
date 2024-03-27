@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-14T19:14:17 IST" name="Default suite" finished-at="2024-03-14T19:15:20 IST" duration-ms="62423">
+  <suite started-at="2024-03-27T14:35:00 IST" name="Default suite" finished-at="2024-03-27T14:35:39 IST" duration-ms="39343">
     <groups>
     </groups>
-    <test started-at="2024-03-14T19:14:17 IST" name="Default test" finished-at="2024-03-14T19:15:20 IST" duration-ms="62423">
+    <test started-at="2024-03-27T14:35:00 IST" name="Default test" finished-at="2024-03-27T14:35:39 IST" duration-ms="39343">
       <class name="helper.ABTesting">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-14T19:14:17 IST" name="setUp" finished-at="2024-03-14T19:15:08 IST" duration-ms="50317" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:00 IST" name="setUp" finished-at="2024-03-27T14:35:28 IST" duration-ms="28105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="abTesting()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-14T19:15:08 IST" name="abTesting" finished-at="2024-03-14T19:15:12 IST" duration-ms="3968" status="PASS">
+        <test-method signature="abTesting()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:28 IST" name="abTesting" finished-at="2024-03-27T14:35:31 IST" duration-ms="3009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- abTesting -->
-        <test-method signature="switchToElementalSelenium()[pri:1, instance:helper.ABTesting@327514f]" started-at="2024-03-14T19:15:12 IST" name="switchToElementalSelenium" finished-at="2024-03-14T19:15:19 IST" duration-ms="6856" status="PASS">
+        <test-method signature="switchToElementalSelenium()[pri:1, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:31 IST" name="switchToElementalSelenium" finished-at="2024-03-27T14:35:38 IST" duration-ms="7228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchToElementalSelenium -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-14T19:15:19 IST" name="tearDown" finished-at="2024-03-14T19:15:20 IST" duration-ms="1233" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:38 IST" name="tearDown" finished-at="2024-03-27T14:35:39 IST" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

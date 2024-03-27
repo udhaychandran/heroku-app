@@ -24,9 +24,6 @@ import utilities.SetupTeardown;
 
 public class ABTesting extends SetupTeardown {
 
-	
-	
-	
 	ABTestingPOM abTestingPOM;
 	String fileName = "./src/test/java/resources/basicInfo.properties";
 	Functions func = new Functions();
@@ -36,6 +33,10 @@ public class ABTesting extends SetupTeardown {
 	SetupTeardown setupTearDown;
 	Date date = new Date();
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+	
+	public ABTesting() {
+		super();
+	}
 	@Test(priority = 0)
 	public void abTesting(){
 		
