@@ -1,6 +1,8 @@
 package utilities;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,41 +14,51 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.beust.jcommander.Parameter;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SetupTeardown {
 	
-	public static ExtentReports extentReport;
+	public static ExtentReports extentReports;
 	public static ExtentTest extentTest;
 	public static String className;
 	public static WebDriver driver;
 	public WebDriverWait wait;
+	
+	
 	public SetupTeardown() {
-		this.driver=driver;
-	}
-	
-	
+		
+	}	
 	@BeforeTest
-	public void setUp() {
-				
+	public static WebDriver setUp() {
+		Date date = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		if (driver==null)
+		{
+			extentReports = ExtentReport.getInstance("Report/Reports_"+dateFormat.format(date));
 			WebDriverManager.chromedriver().clearDriverCache().setup();
-				driver = new ChromeDriver();
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-				driver.manage().window().maximize(); 	
-				//driver.get("https://the-internet.herokuapp.com/");
-					
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize(); 	
+			driver.get("https://the-internet.herokuapp.com/");
+						
+		}
+		return driver;
+		
 		}
 		
 	
  	@AfterTest
  	public void tearDown() {
- 		driver.quit();
- 		System.out.println("After test executed");
+ 		if (driver!=null)
+ 		{
+ 			driver.quit();
+ 	 		extentReports.flush();	
+ 		}
  	}
 	
 	public void waitForSometime() {
