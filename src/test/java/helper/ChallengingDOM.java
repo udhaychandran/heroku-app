@@ -1,6 +1,8 @@
 package helper;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import POM.ChallengingDOMPOM;
+import utilities.ExtentReport;
 import utilities.Functions;
 import utilities.SetupTeardown;
 
@@ -16,9 +19,11 @@ public class ChallengingDOM extends SetupTeardown{
 	Functions func = new Functions();
 	private static String folderName = "ChallengingDOM";
 	ChallengingDOMPOM challengingDOMPOM;
+	Date date = new Date();
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 	@Test
 	public void challengingDOM() throws IOException {
-		
+		extentTest = ExtentReport.createTest("folderName"+"_"+dateFormat.format(date)+".html"); 
 		challengingDOMPOM = new ChallengingDOMPOM(driver);
 		challengingDOMPOM.challengeingDOMClick();
 		func.takeScreenShot(driver, folderName, "challengingDOMLink");
@@ -44,6 +49,6 @@ public class ChallengingDOM extends SetupTeardown{
 				System.out.println(columns.getText());
 			}
 		}
-	
+		extentTest.pass("Challenging method is passed");
 	}
 }

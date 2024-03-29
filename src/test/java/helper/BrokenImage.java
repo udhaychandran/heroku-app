@@ -44,6 +44,7 @@ public class BrokenImage extends SetupTeardown {
 			}
 		}
 		System.out.println("Total broken images is: "+invalidImgCount);
+		extentTest.pass("FindBrokenImg method is passed");
 	}
 	
 	public void countInActiveImage(WebElement imgElement) throws ClientProtocolException, IOException  {

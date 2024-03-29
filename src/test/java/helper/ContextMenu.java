@@ -37,10 +37,11 @@ public class ContextMenu extends SetupTeardown {
 			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 			String text = alert.getText();
 			alert.accept();
+			extentTest.pass("ContextMenu method is passed");
 			
 			}
 		catch (Exception e) {
-			// TODO: handle exception
+			extentTest.fail("Add method is passed");
 		}
 		
 		

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="helper.BrokenImage">
+      <class name="helper.ChallengingDOM">
         <methods>
-          <include name="findBrokenImages"/>
           <include name="setUp"/>
+          <include name="challengingDOM"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- helper.BrokenImage -->
+      </class> <!-- helper.ChallengingDOM -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,5 +1,6 @@
 package utilities;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +31,7 @@ public class SetupTeardown {
 	public static String className;
 	public static WebDriver driver;
 	public WebDriverWait wait;
-	
+	Functions func = new Functions();
 	
 	public SetupTeardown() {
 		
@@ -53,16 +56,18 @@ public class SetupTeardown {
 		
 	
  	@AfterTest
- 	public void tearDown() {
+ 	public void tearDown() throws IOException {
  		if (driver!=null)
  		{
  			driver.quit();
+ 			System.out.println("driver quit");
  	 		extentReports.flush();	
  		}
+ 		
  	}
 	
 	public void waitForSometime() {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	
 }
