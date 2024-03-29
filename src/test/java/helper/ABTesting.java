@@ -42,7 +42,7 @@ public class ABTesting extends SetupTeardown {
 		
 		try {
 			
-			extentTest = ExtentReport.createTest("report/abTesting"+dateFormat.format(date)+".html"); 
+			extentTest = ExtentReport.createTest("folderName"+"_"+dateFormat.format(date)+".html"); 
 			abTestingPOM = new ABTestingPOM(driver);
 			driver.get(prop.getProperty("url"));
 			abTestingPOM.abTesting();

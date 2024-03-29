@@ -1,6 +1,8 @@
 package helper;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -20,9 +22,13 @@ public class AddElement extends SetupTeardown{
 	String fileName = "./src/test/java/resources/basicInfo.properties";
 	String folderName = "AddElement";
 	Properties prop = Functions.readProperties(fileName);
+	Date date = new Date();
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+	
 	@Test(priority = 0)
 	public void addElement() throws InterruptedException, IOException {
 		
+		extentTest = extentReports.createTest(folderName+"_"+dateFormat.format(date)+".html");
 		Thread.sleep(2000);
 		driver.get(prop.getProperty("url"));
 		addElement = new AddElementPOM(driver);
@@ -30,6 +36,7 @@ public class AddElement extends SetupTeardown{
 		func.takeScreenShot(driver, folderName, "Add/DeleteElementLink");
 		addElement.addElement();
 		func.takeScreenShot(driver, folderName, "AddElement");
+		extentTest.pass("Add method is passed");
 		Thread.sleep(2000);
 	}
 	@Test(priority = 1)
@@ -37,6 +44,7 @@ public class AddElement extends SetupTeardown{
 		addElement = new AddElementPOM(driver);
 		addElement.deleteElement();
 		func.takeScreenShot(driver, folderName, "DeleteElement");
+		extentTest.pass("Add method is passed");
 		Thread.sleep(1000);
 	}
 }

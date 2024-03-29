@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-27T14:35:00 IST" name="Default suite" finished-at="2024-03-27T14:35:39 IST" duration-ms="39343">
+  <suite started-at="2024-03-29T20:31:31 IST" name="Default suite" finished-at="2024-03-29T20:31:50 IST" duration-ms="19015">
     <groups>
     </groups>
-    <test started-at="2024-03-27T14:35:00 IST" name="Default test" finished-at="2024-03-27T14:35:39 IST" duration-ms="39343">
-      <class name="helper.ABTesting">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:00 IST" name="setUp" finished-at="2024-03-27T14:35:28 IST" duration-ms="28105" status="PASS">
+    <test started-at="2024-03-29T20:31:31 IST" name="Default test" finished-at="2024-03-29T20:31:50 IST" duration-ms="19015">
+      <class name="helper.AdOns">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:helper.AdOns@2cf92cc7]" started-at="2024-03-29T20:31:31 IST" name="setUp" finished-at="2024-03-29T20:31:49 IST" duration-ms="17320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="abTesting()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:28 IST" name="abTesting" finished-at="2024-03-27T14:35:31 IST" duration-ms="3009" status="PASS">
+        <test-method signature="adOn()[pri:0, instance:helper.AdOns@2cf92cc7]" started-at="2024-03-29T20:31:49 IST" name="adOn" finished-at="2024-03-29T20:31:50 IST" duration-ms="1026" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- abTesting -->
-        <test-method signature="switchToElementalSelenium()[pri:1, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:31 IST" name="switchToElementalSelenium" finished-at="2024-03-27T14:35:38 IST" duration-ms="7228" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- switchToElementalSelenium -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.ABTesting@327514f]" started-at="2024-03-27T14:35:38 IST" name="tearDown" finished-at="2024-03-27T14:35:39 IST" duration-ms="932" status="PASS">
+        </test-method> <!-- adOn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:helper.AdOns@2cf92cc7]" started-at="2024-03-29T20:31:50 IST" name="tearDown" finished-at="2024-03-29T20:31:50 IST" duration-ms="617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- helper.ABTesting -->
+      </class> <!-- helper.AdOns -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
