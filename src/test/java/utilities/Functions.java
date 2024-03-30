@@ -15,13 +15,13 @@ import org.openqa.selenium.WebDriver;
 public class Functions {
 
 	
-	public void takeScreenShot(WebDriver driver, String folderName, String fileName) throws IOException {
+	public void takeScreenShot(WebDriver driver, String folderName,String subFolder, String fileName) throws IOException {
 		
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File srcFile = ts.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcFile, new File("./Screenshot/"+folderName+"_"+dateFormat.format(date)+"/"+fileName+".png"));
+		FileUtils.copyFile(srcFile, new File("./Screenshot/"+folderName+"/"+"/"+subFolder+"_"+dateFormat.format(date)+"/"+fileName+".png"));
 	}
 	
 	public static Properties readProperties(String filePath) {

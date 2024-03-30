@@ -47,7 +47,7 @@ public class RobotClass extends SetupTeardown{
 			robot.keyPress(KeyEvent.VK_A);
 			robot.keyPress(KeyEvent.VK_Y);
 			robot.keyPress(KeyEvent.VK_A);
-			func.takeScreenShot(driver, folderName, "keyEventShift");
+			func.takeScreenShot(driver, folderName,folderName, "keyEventShift");
 			robot.keyRelease(KeyEvent.VK_SHIFT);
 			
 			//Press Caps

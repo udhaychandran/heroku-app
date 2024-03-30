@@ -17,11 +17,11 @@ public class NestedFrames extends SetupTeardown{
 			
 		try {
 			driver.findElement(By.linkText("Frames")).click();
-			func.takeScreenShot(driver, folderName, "FrameLinkClick");
+			func.takeScreenShot(driver, folderName,folderName, "FrameLinkClick");
 			Thread.sleep(3000);
 			driver.findElement(By.linkText("Nested Frames")).click();
 			Thread.sleep(3000);
-			func.takeScreenShot(driver, folderName, "NestedFrameLinkClick");
+			func.takeScreenShot(driver, folderName,folderName, "NestedFrameLinkClick");
 			Thread.sleep(3000);
 			//Find Total Number of Frames
 				driver.switchTo().frame("frame-left");

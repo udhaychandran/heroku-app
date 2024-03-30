@@ -47,7 +47,7 @@ public class ABTesting extends SetupTeardown {
 			driver.get(prop.getProperty("url"));
 			abTestingPOM.abTesting();
 			Thread.sleep(2000);
-			func.takeScreenShot(driver, folderName, "ABTestingPage");
+			func.takeScreenShot(driver, folderName,folderName, "ABTestingPage");
 			extentTest.pass("Browser Launched");
 			
 		}
@@ -63,7 +63,7 @@ public class ABTesting extends SetupTeardown {
 		try {
 			abTestingPOM = new ABTestingPOM(driver);
 			abTestingPOM.elementSeleniumLink();
-			func.takeScreenShot(driver, folderName, "Elemental_Selenium");
+			func.takeScreenShot(driver, folderName,folderName, "Elemental_Selenium");
 			extentTest.pass("Select Link is visible");
 			String parentWindow = driver.getWindowHandle();
 			Set<String> childWindow = driver.getWindowHandles();
@@ -76,7 +76,7 @@ public class ABTesting extends SetupTeardown {
 					extentTest.pass("Switch to child window");
 					Thread.sleep(2000);
 					driver.findElement(By.id("email")).sendKeys("Test");
-					func.takeScreenShot(driver, folderName, "Elemental_SeleniumPage");
+					func.takeScreenShot(driver, folderName,folderName, "Elemental_SeleniumPage");
 					Thread.sleep(2000);
 					driver.switchTo().window(parentWindow);
 				}
