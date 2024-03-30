@@ -30,7 +30,7 @@ public class ContextMenu extends SetupTeardown {
 			WebElement element = driver.findElement(By.xpath("//div[@id='hot-spot']"));
 			//contextMenuPOM.contextMenuLinkClick();
 			Thread.sleep(5000);
-			func.takeScreenShot(driver, folderName, "ContextMenu_Alert");
+			func.takeScreenShot(driver, folderName,folderName, "ContextMenu_Alert");
 			Actions act = new Actions(driver);
 			act.contextClick(element).perform();
 			Thread.sleep(5000);

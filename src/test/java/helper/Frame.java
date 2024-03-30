@@ -16,11 +16,11 @@ public class Frame extends SetupTeardown{
 			
 		try {
 			driver.findElement(By.linkText("Frames")).click();
-			func.takeScreenShot(driver, folderName, "FrameLinkClick");
+			func.takeScreenShot(driver, folderName,folderName, "FrameLinkClick");
 			Thread.sleep(3000);
 			driver.findElement(By.linkText("iFrame")).click();
 			Thread.sleep(3000);
-			func.takeScreenShot(driver, folderName, "iFrameLinkClick");
+			func.takeScreenShot(driver, folderName, folderName,"iFrameLinkClick");
 			Thread.sleep(3000);
 			//Find Total Number of Frames
 			int iFrame = driver.findElements(By.tagName("iframe")).size();

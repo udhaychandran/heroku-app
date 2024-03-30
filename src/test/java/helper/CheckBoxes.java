@@ -25,7 +25,7 @@ public class CheckBoxes extends SetupTeardown {
 			checkBoxPOM = new CheckboxesPOM(driver);
 			checkBoxPOM.clickCheckBoxLink();
 			checkBoxPOM.clickCheckBoxOne();
-			func.takeScreenShot(driver, folderName, "CheckBoxes");
+			func.takeScreenShot(driver, folderName,folderName, "CheckBoxes");
 			List<WebElement> checkBoxXpath = driver.findElements(By.xpath("//input[@type='checkbox']"));
 			//Find if a checkbox is already checked
 			

@@ -21,7 +21,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.beust.jcommander.Parameter;
 
-
+import POM.AdOn_POM;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SetupTeardown {
@@ -38,6 +38,7 @@ public class SetupTeardown {
 	}	
 	@BeforeTest
 	public static WebDriver setUp() {
+		AdOn_POM adOn_POM = new AdOn_POM(driver);
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		if (driver==null)
@@ -45,7 +46,6 @@ public class SetupTeardown {
 			extentReports = ExtentReport.getInstance("Report/Reports_"+dateFormat.format(date));
 			WebDriverManager.chromedriver().clearDriverCache().setup();
 			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			driver.manage().window().maximize(); 	
 			driver.get("https://the-internet.herokuapp.com/");
 						
@@ -65,9 +65,4 @@ public class SetupTeardown {
  		}
  		
  	}
-	
-	public void waitForSometime() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	}
-	
 }

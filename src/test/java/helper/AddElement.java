@@ -20,7 +20,7 @@ public class AddElement extends SetupTeardown{
 	Functions func = new Functions();
 	//Properties prop = new Properties();
 	String fileName = "./src/test/java/resources/basicInfo.properties";
-	String folderName = "AddElement";
+	static String folderName = "AddElement";
 	Properties prop = Functions.readProperties(fileName);
 	Date date = new Date();
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
@@ -33,9 +33,9 @@ public class AddElement extends SetupTeardown{
 		driver.get(prop.getProperty("url"));
 		addElement = new AddElementPOM(driver);
 		addElement.addDeleteElementLink();
-		func.takeScreenShot(driver, folderName, "Add/DeleteElementLink");
+		func.takeScreenShot(driver, folderName, folderName,"Add/DeleteElementLink");
 		addElement.addElement();
-		func.takeScreenShot(driver, folderName, "AddElement");
+		func.takeScreenShot(driver, folderName,folderName, "AddElement");
 		extentTest.pass("Add method is passed");
 		Thread.sleep(2000);
 	}
@@ -43,7 +43,7 @@ public class AddElement extends SetupTeardown{
 	public void deleteElement() throws InterruptedException, IOException {
 		addElement = new AddElementPOM(driver);
 		addElement.deleteElement();
-		func.takeScreenShot(driver, folderName, "DeleteElement");
+		func.takeScreenShot(driver, folderName,folderName, "DeleteElement");
 		extentTest.pass("Add method is passed");
 		Thread.sleep(1000);
 	}

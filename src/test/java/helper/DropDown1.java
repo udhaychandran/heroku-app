@@ -27,7 +27,7 @@ public class DropDown1 {
 		List<WebElement> ele = s.getOptions();
 		s.selectByIndex(ele.size()-1);
 		try {
-			func.takeScreenShot(driver, folderName, "dropdown_last");
+			func.takeScreenShot(driver, folderName, folderName,"dropdown_last");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

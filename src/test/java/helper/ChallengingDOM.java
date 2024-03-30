@@ -26,7 +26,7 @@ public class ChallengingDOM extends SetupTeardown{
 		extentTest = ExtentReport.createTest("folderName"+"_"+dateFormat.format(date)+".html"); 
 		challengingDOMPOM = new ChallengingDOMPOM(driver);
 		challengingDOMPOM.challengeingDOMClick();
-		func.takeScreenShot(driver, folderName, "challengingDOMLink");
+		func.takeScreenShot(driver, folderName, folderName,"challengingDOMLink");
 		//Get Total number of rows
 		List<WebElement> rowNumber = driver.findElements(By.xpath("//table//thead//tr//th"));
 		int rowCount = rowNumber.size();
